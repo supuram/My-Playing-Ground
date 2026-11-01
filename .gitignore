@@ -1,0 +1,11 @@
+# Ignore everything in the folder
+*
+
+# Un-ignore directories (so Git can look inside them for .py files)
+!*/
+
+# Un-ignore all Python files
+!*.py
+
+# Allow the .gitignore file itself to be tracked
+!.gitignore

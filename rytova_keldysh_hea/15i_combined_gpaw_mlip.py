@@ -98,7 +98,7 @@ plt.xlim(1.0, 1.35)
 plt.grid(True, alpha=0.3)
 plt.legend(frameon=True)
 plt.tight_layout()
-plt.savefig('data/HfS2_Odoped_Hybrid_PL_Spectrum.png')
+plt.savefig('structures/HfS2_Odoped_Hybrid_PL_Spectrum.png')
 print("Saved hybrid spectrum plot to data/HfS2_Odoped_Hybrid_PL_Spectrum.png")
 
 ''' Output

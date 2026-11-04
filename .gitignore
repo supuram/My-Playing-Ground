@@ -1,11 +1,13 @@
 # Ignore everything in the folder
 *
 
-# Un-ignore directories (so Git can look inside them for .py files)
+# Un-ignore directories (so Git can look inside them)
 !*/
 
-# Un-ignore all Python files
+# Un-ignore Python files, figures, and data tables
 !*.py
+!*.png
+!*.txt
 
 # Allow the .gitignore file itself to be tracked
 !.gitignore

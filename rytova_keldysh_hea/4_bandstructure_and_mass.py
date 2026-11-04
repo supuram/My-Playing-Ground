@@ -134,4 +134,16 @@ Saved band structure plot to structures/HfS2_bandstructure.png
 Hole effective mass (m_h*):     0.460 m_0
 Electron effective mass (m_e*): 0.999 m_0
 Reduced exciton mass (mu_eff):  0.315 m_0
+
+Why are they same for n = 36 and n = 250 ?
+In standard Density Functional Theory (DFT), the effective potential of the system is constructed only from the electron density. The 
+electron density is built exclusively from the occupied bands.
+Since HfS2 has 24 valence electrons, only the first 12 bands are occupied. Once those 12 bands are filled, the ground-state potential is 
+locked in.When you tell GPAW to calculate nbands=36 or nbands=250, it uses that exact same locked-in potential to mathematically solve for
+higher-energy, empty states. Because the potential doesn't change, the energies of Band 11 (the VBM) and Band 12 (the CBM) remain 
+mathematically identical regardless of whether you calculate 24 or 238 extra empty bands above them.
+Why did 250 bands change the polarizability in the previous script?
+Because polarizability is a response property. It is calculated using perturbation theory, which requires summing over virtual transitions
+from occupied states to empty states. More empty bands = more transition pathways = a different (more accurate) polarizability. But 
+bandgap and effective mass are ground-state eigenvalues, which don't care about the empty bands above them.
 '''

@@ -80,3 +80,18 @@ dev_optical = ((C_moss_optical - bulk_moss_constant) / bulk_moss_constant) * 100
 
 print(f"Deviation from bulk rule (GW): {dev_GW:.1f}%")
 print(f"Deviation from bulk rule (Optical): {dev_optical:.1f}%")
+
+''' Output
+--- MIE RESONATOR METRICS (@ 1.5 eV) ---
+Refractive Index (n): 2.494 (Ideal is > 2.0)
+Extinction (k): 0.06302 (Ideal is ~ 0.0)
+Mie Figure of Merit (n/k): 39.6
+
+--- MOSS RULE EVALUATION ---
+Static Refractive Index (n_0): 1.962
+Calculated Moss Constant (using GW Gap): 58.10 eV
+Calculated Moss Constant (using Optical Gap): 38.89 eV
+Standard Bulk Moss Constant: 95.0 eV
+Deviation from bulk rule (GW): -38.8%
+Deviation from bulk rule (Optical): -59.1%
+'''

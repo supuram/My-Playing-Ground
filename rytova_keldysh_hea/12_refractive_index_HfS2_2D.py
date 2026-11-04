@@ -75,7 +75,7 @@ bse_results = bse.get_polarizability(
 print("BSE raw shape:", np.shape(bse_results), flush=True)
 
 # Select the in-plane polarizability spectrum
-alpha_2d_bse = bse_results[0]
+alpha_2d_bse = bse_results[1]
 print("BSE in-plane shape:", alpha_2d_bse.shape, flush=True)
 print("BSE return shape:", np.shape(alpha_2d_bse), flush=True)
 # ==========================================================

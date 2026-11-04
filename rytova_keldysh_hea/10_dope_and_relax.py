@@ -1,4 +1,3 @@
-import numpy as np
 from ase.io import read
 from gpaw import GPAW, PW, FermiDirac
 from ase.optimize import BFGS

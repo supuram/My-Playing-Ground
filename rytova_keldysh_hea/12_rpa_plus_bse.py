@@ -47,7 +47,7 @@ fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(8, 10), sharex=True)
 ax1.plot(energy, n_stitched, label='Refractive Index ($n$)', color='tab:blue', linewidth=2.5)
 ax1.plot(energy, k_stitched, label='Extinction Coefficient ($k$)', color='tab:orange', linewidth=2.5)
 ax1.set_ylabel('Optical Constants', fontsize=12)
-ax1.set_title('Optical Properties of 1T-HfS$_2$ from RPA', fontsize=14)
+ax1.set_title('Optical Properties of 1T-HfS$_2$ from RPA + BSE', fontsize=14)
 ax1.legend(loc='upper right')
 ax1.grid(True, linestyle='--', alpha=0.6)
 

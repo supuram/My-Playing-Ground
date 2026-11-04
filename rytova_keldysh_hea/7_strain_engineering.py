@@ -1,5 +1,3 @@
-import numpy as np
-import matplotlib.pyplot as plt
 from ase.io import read
 from gpaw import GPAW, PW, FermiDirac
 from gpaw.response.g0w0 import G0W0
@@ -54,8 +52,8 @@ for s in strain_percents:
     atoms.get_potential_energy()
     
     # Extract PBE Gap (VBM=11, CBM=12)
-    vbm_pbe = calc.get_eigenvalues(kpt=0)[10]
-    cbm_pbe = calc.get_eigenvalues(kpt=0)[11]
+    vbm_pbe = calc.get_eigenvalues(kpt=0)[11]
+    cbm_pbe = calc.get_eigenvalues(kpt=0)[12]
     pbe_gap = cbm_pbe - vbm_pbe
     pbe_gaps.append(pbe_gap)
     
@@ -86,31 +84,3 @@ for s in strain_percents:
     del gw
     del results
     gc.collect()
-    
-    print(f"\nResult for {s}% Strain: PBE Gap = {pbe_gap:.3f} eV | GW Gap = {gw_gap:.3f} eV")
-
-# ==========================================================
-# 5. Plot the Band Gap Engineering Curve
-# ==========================================================
-plt.figure(figsize=(8, 5))
-plt.plot(strain_percents, pbe_gaps, 'k--o', label='PBE Gap', alpha=0.7)
-plt.plot(strain_percents, gw_gaps, 'r-o', linewidth=2.5, label='True G0W0 Gap')
-
-plt.xlabel('Biaxial Strain (%)', fontsize=12)
-plt.ylabel('Fundamental Band Gap (eV)', fontsize=12)
-plt.title('Strain Engineering of 1T-HfS$_2$ Band Gap', fontsize=14)
-plt.legend(loc='best')
-plt.grid(True, linestyle=':', alpha=0.6)
-
-plt.tight_layout()
-plt.savefig('structures/HfS2_Strain_Engineering.png', dpi=300)
-print("\nStrain calculation complete! Saved plot to 'structures/HfS2_Strain_Engineering.png'")
-
-summary_file = 'data/HfS2_Strain_Summary.txt'
-with open(summary_file, 'w') as f:
-    f.write("Strain(%) | PBE_Gap(eV) | GW_Gap(eV)\n")
-    f.write("-" * 40 + "\n")
-    for i in range(len(strain_percents)):
-        f.write(f"{strain_percents[i]:9.1f} | {pbe_gaps[i]:11.3f} | {gw_gaps[i]:10.3f}\n")
-
-print(f"Saved numerical data to {summary_file}")

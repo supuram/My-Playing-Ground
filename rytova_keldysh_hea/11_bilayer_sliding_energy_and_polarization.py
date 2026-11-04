@@ -34,5 +34,5 @@ plt.title('Sliding Energy Landscape & Polarization of 1T-HfS$_2$ Bilayer', pad=1
 fig.tight_layout()
 
 # Save to disk
-plt.savefig('data/HfS2_11_bilayer_sliding_energy_and_polarization_Plot.png', dpi=300)
-print("Saved plot to 'data/HfS2_11_bilayer_sliding_energy_and_polarization_Plot.png'")
+plt.savefig('structures/HfS2_11_bilayer_sliding_energy_and_polarization_Plot.png', dpi=300)
+print("Saved plot to 'structures/HfS2_11_bilayer_sliding_energy_and_polarization_Plot.png'")

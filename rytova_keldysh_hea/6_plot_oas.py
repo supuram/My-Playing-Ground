@@ -80,3 +80,5 @@ plt.tight_layout()
 # Save the figure
 plt.savefig('structures/HfS2_Optical_Spectrum.png', dpi=300)
 print("Saved macroscopic optical spectrum to 'structures/HfS2_Optical_Spectrum.png'")
+
+# OAS = Optical Absorption Spectrum

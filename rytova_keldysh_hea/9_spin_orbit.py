@@ -1,4 +1,3 @@
-import numpy as np
 from ase.io import read
 from gpaw import GPAW, PW
 from gpaw.spinorbit import soc_eigenstates
